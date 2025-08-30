@@ -30,6 +30,13 @@ This repo serves as a **clean foundation** for building secure, scalable applica
 
 ---
 
+## ⚠️ Package Note
+
+- @node-rs/argon2: This package is required for password hashing. It is a native package and may not work on all systems. If you encounter any issues, please refer to the [Better Auth documentation](https://better-auth.com/docs).
+- nodemailer: This package is required for email verification and password reset. It is a dependency of [Better Auth](https://better-auth.com).
+
+---
+
 ## Getting Started
 
 ### Prerequisites
