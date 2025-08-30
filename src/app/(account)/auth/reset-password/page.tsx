@@ -1,9 +1,21 @@
+import { ResetPasswordForm } from "@/components/auth/reset-password-form";
+import Link from "next/link";
 import React from "react";
 
-export default function ResetPasswordPage() {
+interface ResetPasswordPageProps {
+  searchParams: { token: string };
+}
+
+export default async function ResetPasswordSuccessPage({
+  searchParams,
+}: ResetPasswordPageProps) {
+  const token = (await searchParams).token;
+  //   console.log(token);
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-3xl font-bold">Reset Password</h1>
-    </div>
+    <>
+      <div className="px-8 py-16 container mx-auto max-w-screen-md space-y-8 flex justify-center items-center">
+        <ResetPasswordForm token={token} />
+      </div>
+    </>
   );
 }
