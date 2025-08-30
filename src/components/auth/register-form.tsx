@@ -42,6 +42,7 @@ export function RegisterForm() {
 
   async function onSubmit(values: z.infer<typeof registerSchema>) {
     const { email, password, name } = values;
+    console.log(values);
 
     await signUp.email(
       {
@@ -59,7 +60,7 @@ export function RegisterForm() {
         onSuccess: () => {
           setIsPending(false);
           toast.success("You have been registered");
-          router.push("/auth/login");
+          router.push("/auth/register/success");
         },
         onError: (context: any) => {
           setIsPending(false);

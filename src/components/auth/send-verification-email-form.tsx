@@ -29,7 +29,7 @@ export const SendVerificationEmailForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof sendVerificationEmailSchema>) {
-    console.log(values);
+    // console.log(values);
     const { email } = values;
 
     if (!email) return toast.error("Please enter your email.");
@@ -63,16 +63,16 @@ export const SendVerificationEmailForm = () => {
       <CardContent>
         <Form {...form}>
           <form
-            className="max-w-sm w-full space-y-4"
+            className="w-full space-y-4"
             onSubmit={form.handleSubmit(onSubmit)}
           >
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormLabel>Email</FormLabel>
-                  <FormControl>
+                  <FormControl className="w-full">
                     <Input
                       type="email"
                       placeholder="Enter your email"

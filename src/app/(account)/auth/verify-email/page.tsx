@@ -12,14 +12,12 @@ export default async function Page({ searchParams }: PageProps) {
   if (!error) redirect("/");
 
   return (
-    <div className="px-8 py-16 container mx-auto max-w-screen-lg space-y-8">
-      <div className="space-y-4">
-        <Link href="/auth/login">Login</Link>
-
-        <h1 className="text-3xl font-bold">Verify Email</h1>
+    <div className="px-8 py-16 container mx-auto max-w-screen-md space-y-4">
+      <div className="space-y-4 text-center">
+        <h1 className="text-3xl font-bold">Oops! Something went wrong</h1>
       </div>
 
-      <p className="text-destructive">
+      <p className="text-destructive text-center">
         <span className="capitalize">
           {error.replace(/_/g, " ").replace(/-/g, " ")}
         </span>{" "}

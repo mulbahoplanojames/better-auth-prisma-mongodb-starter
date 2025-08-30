@@ -26,5 +26,5 @@ export const loginSchema = z.object({
 });
 
 export const sendVerificationEmailSchema = z.object({
-  email: z.string().email(),
+  email: z.string().email({ message: "Please enter a valid email" }),
 });

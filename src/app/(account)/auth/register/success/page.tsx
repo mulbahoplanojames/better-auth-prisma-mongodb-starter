@@ -1,10 +1,11 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+
+import Link from "next/link";
 import { CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
-export default function Page() {
+const SuccessRegisterPage: React.FC = () => {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
@@ -12,17 +13,16 @@ export default function Page() {
           <Check className="size-18 text-white" />
         </div>
         <CardTitle className="md:text-2xl text-lg text-center">
-          Resend Verification Email Successful
+          Registration Successful
         </CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-center">
-          Please check your email for a new verification email.
+          Please check your email for verification link.
         </p>
 
         <p className="text-center">
-          If you don&apos;t receive the verification email, check your spam
-          folder.
+          If you don&apos;t receive the email, check your spam folder.
         </p>
 
         <Button
@@ -36,4 +36,6 @@ export default function Page() {
       </CardContent>
     </Card>
   );
-}
+};
+
+export default SuccessRegisterPage;
