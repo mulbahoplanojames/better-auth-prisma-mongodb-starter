@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { headers } from "next/headers";
 import SignOutButton from "@/components/auth/signout-button";
+import { Button } from "@/components/ui/button";
 
 export default async function HomePage() {
   const session = await auth.api.getSession({
@@ -12,26 +13,14 @@ export default async function HomePage() {
   console.log(session);
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold">Home</h1>
+    <>
+      <div className="p-6 flex justify-between items-center">
+        <h1 className="text-3xl font-bold pt-10">HomeGYP</h1>
 
-      {session ? (
-        <div>
-          <p className="py-3">Hello {session.user?.name}</p>
-          <SignOutButton />
-        </div>
-      ) : (
-        <>
-          <div className="flex gap-6 py-4">
-            <Link href="/auth/login" className="underline">
-              Login
-            </Link>
-            <Link href="/auth/register" className="underline">
-              Register
-            </Link>
-          </div>
-        </>
-      )}
-    </div>
+        <Button asChild>
+          <Link href="/dashboard">Get Started</Link>
+        </Button>
+      </div>
+    </>
   );
 }
