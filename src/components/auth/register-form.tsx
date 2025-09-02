@@ -27,6 +27,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { SignInOauthButton } from "./sign-in-oauth-button";
+import { PasswordInput } from "@/components/ui/password-input";
 
 export function RegisterForm() {
   const [isPending, setIsPending] = useState(false);
@@ -125,6 +126,7 @@ export function RegisterForm() {
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="password"
@@ -132,8 +134,7 @@ export function RegisterForm() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input
-                          type="password"
+                        <PasswordInput
                           placeholder="Please enter your password"
                           {...field}
                         />
@@ -142,6 +143,7 @@ export function RegisterForm() {
                     </FormItem>
                   )}
                 />
+
                 <Button
                   type="submit"
                   className="w-full disabled:opacity-50 flex items-center justify-center gap-2"
