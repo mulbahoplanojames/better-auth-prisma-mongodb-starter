@@ -28,6 +28,7 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { SignInOauthButton } from "./sign-in-oauth-button";
 import Link from "next/link";
+import { PasswordInput } from "../ui/password-input";
 
 export function LoginForm() {
   const [isPending, setIsPending] = useState(false);
@@ -104,6 +105,7 @@ export function LoginForm() {
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="password"
@@ -119,8 +121,7 @@ export function LoginForm() {
                         </Link>
                       </div>
                       <FormControl>
-                        <Input
-                          type="password"
+                        <PasswordInput
                           placeholder="Please enter your password"
                           {...field}
                         />
@@ -129,6 +130,7 @@ export function LoginForm() {
                     </FormItem>
                   )}
                 />
+
                 <Button
                   type="submit"
                   className="w-full flex items-center justify-center gap-2"

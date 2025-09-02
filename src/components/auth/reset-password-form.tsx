@@ -19,6 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { resetPasswordSchema } from "@/schema/schema";
+import { PasswordInput } from "@/components/ui/password-input";
 
 interface ResetPasswordFormProps {
   token: string;
@@ -79,27 +80,26 @@ export const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
                 <FormItem>
                   <FormLabel>New Password</FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       placeholder="Please enter your new password"
                       {...field}
-                      type="password"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
-              name="confirmPassword"
+              name="password"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Confirm Password</FormLabel>
                   <FormControl>
-                    <Input
+                    <PasswordInput
                       placeholder="Please confirm your new password"
                       {...field}
-                      type="password"
                     />
                   </FormControl>
                   <FormMessage />
